@@ -1,0 +1,29 @@
+body, html {
+  min-height: 100%;
+  height: 100%; }
+
+.rsvp-form-wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -108px;
+  margin-top: -67px; }
+
+.rsvp-form {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -moz-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1; }
+
+.phuket {
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  background: url("../images/phuket.jpg"); }
+
+.admin {
+  background: white;
+  padding: 20px; }

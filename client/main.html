@@ -1,0 +1,86 @@
+<head>
+  <title>RSVP App</title>
+</head>
+
+<template name="layout">
+  <div class="container phuket">
+    {{>yield}}
+  </div>
+</template>
+
+<template name="header">
+	<div class="navbar navbar-default" role="navigation">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="/">RSVP App</a>
+  </div>
+  <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+      {{#if currentUser}}<li><a href="/admin">Admin</a></li>{{/if}}
+      {{#each categories}}
+      	<li><a href="/category/{{_id}}">{{name}}</a></li>
+      {{/each}}
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      {{> loginButtons }}
+    </ul>
+  </div>
+</div>
+</template>
+
+<template name="home">
+  {{>rsvpForm}}
+</template>
+
+<template name="rsvpForm">
+  <div class="rsvp-form-wrapper">
+    <h2>Jon and Dianna's wedding</h2>
+    <p>21st November</p>
+    <p>Phuket, Thailand</p>
+    <p>Are you coming</p>
+    <form class="rsvp-form">
+      <div class="form-group form-inline">
+        <label for="email">Email</label>
+        <input class="form-control email" type="email">
+      </div>
+
+      <div class="form-group">
+        <div class="radio">
+          <label>
+            <input type="radio" name="attending" id="optionsRadios1" value="true" checked>
+            I can make it!
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="attending" id="optionsRadios2" value="false">
+            Sorry, can't make it this time!
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="RSVP">
+      </div>
+    </form>
+  </div>
+</template>
+
+<template name="success">
+  Successfully RSVP'd
+</template>
+
+<template name="admin">
+  <div class="admin">
+    <h1>Admin</h1>
+    <table class="table table-striped">
+      <tr><th>First Name</th><th>Last Name</th><th>Email</th><th>Replied</th><th>Attending</th></tr>
+      {{#each guests}}
+        <tr><td>{{firstName}}</td><td>{{lastName}}</td><td>{{email}}</td><td>{{replied this}}</td><td>{{attending this}}</td></tr>
+      {{/each}}
+    </table>
+  </div>
+</template>
+
+<template name="error">
+  Sorry no guest with that email was found
+</template>
