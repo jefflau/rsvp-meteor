@@ -1,9 +1,14 @@
 Template.home.events({
   'submit form': function(e, template){
     e.preventDefault();
+
+    var selected = $("input[type='radio']:checked").val();
+
+    selected = (selected === "true") ? true : false;
+
     var form = {
       email: template.find('.email').value,
-      attending: template.find('input[name=attending]').value
+      attending: selected
     }
 
     Meteor.call('rsvp', form, function(error, id, form){
@@ -22,7 +27,11 @@ Template.admin.guests = function(){
 }
 
 Template.admin.attending = function(guests){
-  return (guests.attending === false) ? "No": "Yes";
+  if(guests.attending === false)
+    return "No"
+  else if (guests.attending === true){
+    return "Yes"
+  }
 }
 
 Template.admin.replied = function(guests){

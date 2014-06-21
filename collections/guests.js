@@ -2,6 +2,8 @@ Guests = new Meteor.Collection('guests');
 
 Meteor.methods({
 	rsvp: function(form) {
+    console.log(form);
+    console.log(form.attending);
     if(!form.email)
       throw new Meteor.Error(422, 'No email provided');
 
@@ -16,6 +18,8 @@ Meteor.methods({
         validEmail = true;
       }
     });
+
+    console.log(form.attending);
 
     if(validEmail === false)
       throw new Meteor.Error(422, 'Email not on guest list');
