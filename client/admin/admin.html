@@ -43,7 +43,6 @@
 
 <template name="editGuest">
   <h1>Edit guest</h1>
-  {{this}}
   <form role="form">
     <div class="form-group">
       <label for="email">Email address</label>
@@ -61,13 +60,13 @@
       <div class="radio">
         <label>
           <input type="radio" class="attending" name="attending" id="optionsRadios1" value="true" {{checked true}}>
-          I can make it!
+          Attending
         </label>
       </div>
       <div class="radio">
         <label>
           <input type="radio" class="attending" name="attending" id="optionsRadios2" value="false" {{checked false}}>
-          Sorry, can't make it this time!
+          Not Attending
         </label>
       </div>
     </div>
