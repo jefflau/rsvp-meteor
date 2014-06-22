@@ -8,25 +8,6 @@
   </div>
 </template>
 
-<template name="header">
-	<div class="navbar navbar-default" role="navigation">
-  <div class="navbar-header">
-    <a class="navbar-brand" href="/">RSVP App</a>
-  </div>
-  <div class="navbar-collapse collapse">
-    <ul class="nav navbar-nav">
-      {{#if currentUser}}<li><a href="/admin">Admin</a></li>{{/if}}
-      {{#each categories}}
-      	<li><a href="/category/{{_id}}">{{name}}</a></li>
-      {{/each}}
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      {{> loginButtons }}
-    </ul>
-  </div>
-</div>
-</template>
-
 <template name="home">
   {{>rsvpForm}}
 </template>
@@ -67,18 +48,6 @@
 
 <template name="success">
   Successfully RSVP'd
-</template>
-
-<template name="admin">
-  <div class="admin">
-    <h1>Admin</h1>
-    <table class="table table-striped">
-      <tr><th>First Name</th><th>Last Name</th><th>Email</th><th>Replied</th><th>Attending</th></tr>
-      {{#each guests}}
-        <tr><td>{{firstName}}</td><td>{{lastName}}</td><td>{{email}}</td><td>{{replied this}}</td><td>{{attending this}}</td></tr>
-      {{/each}}
-    </table>
-  </div>
 </template>
 
 <template name="error">

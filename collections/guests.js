@@ -1,9 +1,16 @@
 Guests = new Meteor.Collection('guests');
 
+Guests.allow({
+	update: function(){
+		return true;
+	},
+	remove: function(){
+		return true;
+	}
+})
+
 Meteor.methods({
 	rsvp: function(form) {
-    console.log(form);
-    console.log(form.attending);
     if(!form.email)
       throw new Meteor.Error(422, 'No email provided');
 
@@ -19,8 +26,6 @@ Meteor.methods({
       }
     });
 
-    console.log(form.attending);
-
     if(validEmail === false)
       throw new Meteor.Error(422, 'Email not on guest list');
 
@@ -32,5 +37,19 @@ Meteor.methods({
     });
 
     return guestId;
+	},
+	addGuest: function(form) {
+		if(!form.email)
+			throw new Meteor.Error(422, 'No email provided');
+		if(!form.firstName)
+			throw new Meteor.Error(422, 'No First Name provided');
+
+		var guest = _.extend({
+			attending: false,
+			replied: false,
+			meal: null
+		},form)
+
+		var guestId = Guests.insert(guest);
 	}
 })

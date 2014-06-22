@@ -1,0 +1,77 @@
+<template name="layoutAdmin">
+  {{>header}}
+  <div class="container">
+    {{>yield}}
+  </div>
+</template>
+
+<template name="guestList">
+  <h1>Guest List</h1>
+  <table class="table table-striped">
+    <tr><th>First Name</th><th>Last Name</th><th>Email</th><th>Replied</th><th>Attending</th></tr>
+    {{#each guests}}
+      <tr>
+        <td>{{firstName}}</td>
+        <td>{{lastName}}</td>
+        <td>{{email}}</td>
+        <td>{{replied this}}</td>
+        <td>{{attending this}}</td>
+        <td><a href="{{pathFor 'editGuest'}}">Edit</a></td>
+      </tr>
+    {{/each}}
+  </table>
+</template>
+
+<template name="addGuest">
+  <h1>Add guest</h1>
+  <form role="form">
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input type="text" class="form-control" id="firstName">
+    </div>
+    <div class="form-group">
+      <label for="lastName">Surname</label>
+      <input type="text" class="form-control" id="lastName">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</template>
+
+<template name="editGuest">
+  <h1>Edit guest</h1>
+  {{this}}
+  <form role="form">
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input type="email" class="form-control" id="email" value="{{email}}">
+    </div>
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input type="text" class="form-control" id="firstName" value="{{firstName}}">
+    </div>
+    <div class="form-group">
+      <label for="lastName">Surname</label>
+      <input type="text" class="form-control" id="lastName" value="{{lastName}}">
+    </div>
+    <div class="form-group">
+      <div class="radio">
+        <label>
+          <input type="radio" class="attending" name="attending" id="optionsRadios1" value="true" {{checked true}}>
+          I can make it!
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" class="attending" name="attending" id="optionsRadios2" value="false" {{checked false}}>
+          Sorry, can't make it this time!
+        </label>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button class="btn btn-danger" id="delete">Delete</button>
+  </form>
+</template>
