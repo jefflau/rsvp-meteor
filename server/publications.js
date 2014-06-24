@@ -5,3 +5,7 @@ Meteor.publish('guests', function() {
 Meteor.publish('singleGuest', function(id) {
   return id && Guests.find(id);
 });
+
+Meteor.publish('courses', function() {
+  return Courses.find();
+});

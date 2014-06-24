@@ -1,0 +1,22 @@
+<template name="mealSelection">
+  <div class="meal-selection">
+    <p>Successfully RSVP'd</p>
+    <form>
+      <h3>Meal Selection</h3>
+        {{#each courses}}
+          {{courseName}}
+          <div class="form-group">
+            {{#each meals}}
+            <div class="radio">
+              <label>
+                <input type="radio" name="{{../courseName}}" value="{{mealName}}">
+                {{mealName}} - {{mealDesc}}
+              </label>
+            </div>
+            {{/each}}
+          </div>
+        {{/each}}
+      <input type="submit" class="btn btn-primary" value="Feed me!">
+    </form>
+  </div>
+</template>

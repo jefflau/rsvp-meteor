@@ -1,0 +1,23 @@
+<template name="layoutAdmin">
+  {{>header}}
+  <div class="container">
+    {{>yield}}
+  </div>
+</template>
+
+<template name="guestList">
+  <h1>Guest List</h1>
+  <table class="table table-striped">
+    <tr><th>First Name</th><th>Last Name</th><th>Email</th><th>Replied</th><th>Attending</th></tr>
+    {{#each guests}}
+      <tr>
+        <td>{{firstName}}</td>
+        <td>{{lastName}}</td>
+        <td>{{email}}</td>
+        <td>{{replied this}}</td>
+        <td>{{attending this}}</td>
+        <td><a href="{{pathFor 'editGuest'}}">Edit</a></td>
+      </tr>
+    {{/each}}
+  </table>
+</template>
