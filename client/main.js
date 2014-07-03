@@ -11,12 +11,13 @@ Template.home.events({
       attending: selected
     }
 
-    Meteor.call('rsvp', form, function(error, id, form){
+    Meteor.call('rsvp', form, function(error, id){
       if (error) {
 				if(error.error === 302)
 					alert('error occured');
 			} else {
-				Router.go('admin');
+        Session.set('currentUserId', id)
+				Router.go('mealSelection');
 			}
     });
   }

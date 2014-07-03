@@ -7,7 +7,7 @@ Guests.allow({
 	remove: function(){
 		return true;
 	}
-})
+});
 
 Meteor.methods({
 	rsvp: function(form) {
@@ -17,7 +17,7 @@ Meteor.methods({
     var guests = Guests.find();
     var emails = guests.map(function(guest){
       return guest.email;
-    })
+    });
     var validEmail = false;
 
     emails.map(function(email, index){
@@ -29,12 +29,14 @@ Meteor.methods({
     if(validEmail === false)
       throw new Meteor.Error(422, 'Email not on guest list');
 
-    var guestId = Guests.update({email: form.email}, {
+  	Guests.update({email: form.email}, {
       $set: {
         attending: form.attending,
         replied: true
       }
     });
+		
+		var guestId = Guests.findOne({email: form.email})._id;
 
     return guestId;
 	},
@@ -48,8 +50,8 @@ Meteor.methods({
 			attending: false,
 			replied: false,
 			meal: null
-		},form)
+		},form);
 
 		var guestId = Guests.insert(guest);
 	}
-})
+});
