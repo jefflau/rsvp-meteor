@@ -1,9 +1,11 @@
 <template name="questions">
   <div class="questions">
     {{#each this}}
-      {{title}}
-      {{text}}
-      {{repliesCount}}
+      <a href="{{pathFor 'question'}}">
+        <h3>{{title}}</h3>
+        <p>{{text}}</p>
+        <span class="replies">Replies: {{repliesCount replies}}</span>
+      </a>
     {{/each}}
   </div>
 </template>

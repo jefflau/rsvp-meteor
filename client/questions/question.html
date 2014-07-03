@@ -1,0 +1,11 @@
+<template name="question">
+  <div class="question">
+    <h3>{{title}}</h3>
+    <p>{{text}}</p>
+    <ul class="replies">
+      {{#each replies}}
+      <li>{{name}}: {{text}}</li>
+      {{/each}}
+    </ul>
+  </div>
+</template>
