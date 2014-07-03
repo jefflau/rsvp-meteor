@@ -1,0 +1,44 @@
+<template name="meals">
+  {{>addCourse}}
+  {{>courses}}
+</template>
+
+<template name="addCourse">
+  <form class="add-course">
+    <div class="form-group">
+      <label for="email">Add a New Course</label>
+      <div class="input-group">
+        <input type="text" class="form-control" id="courseName">
+        <span class="input-group-btn">
+          <button type="submit" class="add-course-btn btn btn-primary">Add</button>
+        </span>
+      </div>
+    </div>
+  </form>
+</template>
+
+<template name="courses">
+    {{#each this}}
+      <div class="course">
+        <h3>{{courseName}}</h3>
+        <ul>
+          {{#each meals}}
+          <li>{{mealName}} - {{mealDesc}}</li>
+          {{/each}}
+        </ul>
+        {{>addMeal}}
+      </div>
+    {{/each}}
+</template>
+
+<template name="addMeal">
+  <form class="add-meal form-inline">
+    <div class="form-group">
+      <label for="mealName">Meal Name</label>
+      <input type="text" class="form-control meal-name">
+      <label for="mealDesc">Description</label>
+      <input type="text" class="form-control meal-desc">
+    </div>
+    <button type="submit" class="add-meal-btn btn btn-primary">Add Meal</button>
+  </form>
+</template>
