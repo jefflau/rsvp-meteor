@@ -1,5 +1,6 @@
 <template name="questions">
   <div class="questions">
+    {{>addQuestion}}
     {{#each this}}
       <a href="{{pathFor 'question'}}">
         <h3>{{title}}</h3>
@@ -8,4 +9,17 @@
       </a>
     {{/each}}
   </div>
+</template>
+
+<template name="addQuestion">
+  <h3>Ask a question:</h3>
+  <form class="add-question">
+    <label for="name">Name:</label>
+    <input type="text" id="name">
+    <label for="title">Title:</label>
+    <input type="text" id="title">
+    <label for="text">Additional Information:</label>
+    <input type="text" id="text">
+    <input type="submit" value="Post">
+  </form>
 </template>
