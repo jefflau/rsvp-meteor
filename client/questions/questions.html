@@ -4,6 +4,7 @@
     {{#each this}}
       <a href="{{pathFor 'question'}}">
         <h3>{{title}}</h3>
+        <p>posted {{prettyDate postedAt}}</p>
         <p>{{text}}</p>
         <span class="replies">Replies: {{repliesCount replies}}</span>
       </a>
