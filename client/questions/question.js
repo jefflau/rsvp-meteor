@@ -1,12 +1,17 @@
 Template.question.events({
   'submit form': function(e, template){
     e.preventDefault();
-    var form = {
-      text: template.find('#text').value,
-      name: template.find('#name').value
-    };
+    var text = template.find('#text').value,
+        name = template.find('#name').value;
 
-    console.log(this._id);
+    if(text.length === 0 || name.length === 0) {
+     return false;
+   }
+
+    var form = {
+      text: text,
+      name: name
+    };
 
     Meteor.call('reply', form, this._id, function(err, id){
       if(err){
