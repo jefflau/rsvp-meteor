@@ -1,0 +1,107 @@
+@import url(http://fonts.googleapis.com/css?family=Great+Vibes|Roboto:400,500,300);
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body, html {
+  font-family: Roboto;
+  font-weight: 300;
+  min-height: 100%;
+  height: 100%; }
+
+.phuket {
+  background: url("../images/hammock.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  height: 100%; }
+
+.header {
+  height: 100%;
+  height: -webkit-calc(100% - 50px);
+  height: calc(100% - 50px);
+  float: left;
+  margin-top: 25px;
+  margin-left: 25px; }
+
+.main {
+  background: rgba(255, 255, 255, 0.8);
+  float: left;
+  height: 100%;
+  margin-top: 25px;
+  padding: 25px;
+  height: -webkit-calc(100% - 50px);
+  height: calc(100% - 50px);
+  width: -webkit-calc(100% - 355px);
+  width: calc(100% - 355px); }
+
+p {
+  max-width: 550px; }
+
+.header {
+  color: white;
+  background: rgba(0, 0, 0, 0.7);
+  position: relative; }
+
+.logo {
+  font-family: "Great Vibes";
+  padding: 5px 20px; }
+
+.main-nav ul {
+  padding: 0; }
+.main-nav li {
+  font-size: 16px;
+  list-style: none; }
+  .main-nav li:hover {
+    background: rgba(255, 155, 62, 0.7); }
+.main-nav a {
+  color: white;
+  display: block;
+  padding: 8px 0 8px 20px; }
+  .main-nav a:hover {
+    text-decoration: none; }
+
+.date-location {
+  position: absolute;
+  left: 20px;
+  bottom: 20px; }
+  .date-location .date {
+    font-weight: 700;
+    display: block;
+    margin-bottom: 5px; }
+
+.rsvp-form-wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+.rsvp-form {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -moz-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1; }
+
+.meal-selection {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+.admin {
+  background: white;
+  padding: 20px; }
+
+.questions {
+  background: white;
+  padding: 15px; }
+
+.question {
+  background: white;
+  padding: 15px; }
