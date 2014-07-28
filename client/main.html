@@ -3,48 +3,25 @@
 </head>
 
 <template name="layout">
-  <div class="container phuket">
-    {{>yield}}
+  <div class="phuket">
+    {{>header}}
+    <div class="main">
+      {{>yield}}
+    </div>
   </div>
 </template>
 
 <template name="home">
-  {{>rsvpForm}}
+  <p>Dear family and friends</p>
+
+<p>Welcome to our wedding website! We are very pleased to invite you to our wedding in Phuket this November. As many of you will be travelling long distances to attend our wedding, we thought we would provide some information here which we hope you will find useful when making travel arrangements and planning your stay in Phuket. If you won’t be able to come to Phuket for our wedding, please don’t worry about it - you can share with us some of our experiences of the wedding here at this website. </p>
+
+<p>Please feel free to post any questions you have on this website (pls insert link to question board page), and please do come back and visit from time to time as we will be posting updates!</p>
+
+<p>Best wishes</p>
+<p>Dianna &amp; Jon</p>
+
 </template>
 
-<template name="rsvpForm">
-  <div class="rsvp-form-wrapper">
-    <h1>Jeff's Awesome Event</h1>
-    <p>Get to the admin page by going to <a href="/admin">/admin</a> and add a guest</p>
-    <p>RSVPs match the emails to get the correct guest</p>
-    <form class="rsvp-form">
-      <div class="form-group form-inline">
-        <label for="email">Email</label>
-        <input class="form-control email" type="email">
-      </div>
-
-      <div class="form-group">
-        <div class="radio">
-          <label>
-            <input type="radio" name="attending" value="true" checked>
-            I can make it!
-          </label>
-        </div>
-        <div class="radio">
-          <label>
-            <input type="radio" name="attending" value="false">
-            Sorry, can't make it this time!
-          </label>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <input type="submit" class="btn btn-primary" value="RSVP">
-      </div>
-    </form>
-  </div>
-</template>
-
-<template name="error">
-  Sorry no guest with that email was found
+<template name="welcome">
 </template>

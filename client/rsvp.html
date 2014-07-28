@@ -1,0 +1,36 @@
+<template name="rsvpForm">
+  <div class="rsvp-form-wrapper">
+    <h1>Jeff's Awesome Event</h1>
+    <p>Get to the admin page by going to <a href="/admin">/admin</a> and add a guest</p>
+    <p>RSVPs match the emails to get the correct guest</p>
+    <form class="rsvp-form">
+      <div class="form-group form-inline">
+        <label for="email">Email</label>
+        <input class="form-control email" type="email">
+      </div>
+
+      <div class="form-group">
+        <div class="radio">
+          <label>
+            <input type="radio" name="attending" value="true" checked>
+            I can make it!
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="attending" value="false">
+            Sorry, can't make it this time!
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="RSVP">
+      </div>
+    </form>
+  </div>
+</template>
+
+<template name="error">
+  Sorry no guest with that email was found
+</template>
