@@ -1,9 +1,19 @@
-@import url(http://fonts.googleapis.com/css?family=Great+Vibes|Roboto:400,500,300);
+@import url(http://fonts.googleapis.com/css?family=Great+Vibes|Roboto:400,500,300,300italic);
 
 @import 'mixins';
 @import 'structure';
 @import 'header';
 @import 'rsvpform';
+@import 'venuedresscode';
+
+//Intro
+
+.intro {
+  p {
+    font-style: italic;
+    font-size: 20px;
+  }
+}
 
 .meal-selection {
   @include centerer;

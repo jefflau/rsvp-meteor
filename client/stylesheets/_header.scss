@@ -1,6 +1,6 @@
 .header {
   color: white;
-  background: rgba(0,0,0,0.7);
+  background: rgba(49,79,113,0.85);
   position: relative;
 }
 
@@ -17,7 +17,7 @@
     font-size: 16px;
     list-style: none;
     &:hover {
-      background: rgba(255, 155, 62, 0.7);
+      background: rgba(181, 240, 255, 0.7);
     }
   }
   a {
@@ -31,12 +31,16 @@
 }
 
 .date-location {
-  position: absolute;
-  left: 20px;
-  bottom: 20px;
+  padding: 0 20px 20px 20px;
+  margin-bottom: 15px;
   .date {
+    float: left;
     font-weight: 700;
     display: block;
     margin-bottom: 5px;
+  }
+  .location {
+    font-weight: 700;
+    float: right;
   }
 }

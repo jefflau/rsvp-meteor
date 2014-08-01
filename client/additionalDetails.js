@@ -1,4 +1,4 @@
-Template.mealSelection.events({
+Template.additionalDetails.events({
   'submit form': function(e, template){
     e.preventDefault();
     console.log('not currently implemented');

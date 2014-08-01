@@ -12,7 +12,8 @@ Template.addGuest.events({
       if(error)
         alert('error');
       else {
-        template.find('input').value="";
+        $('input').val('');
+        alert('guest added successfully');
       }
     });
   }
