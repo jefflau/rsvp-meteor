@@ -17,7 +17,11 @@ Template.rsvpForm.events({
           alert('error occured');
       } else {
         Session.set('currentUserId', id);
-        Router.go('mealSelection');
+        if(selected === true){
+          Router.go('additionalDetails');
+        } else {
+          Router.go('sorry');
+        }
       }
     });
   }

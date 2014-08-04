@@ -43,6 +43,8 @@ img {
   background-size: cover;
   width: 100%;
   height: 100%;
+  position: fixed;
+  overflow-y: scroll;
 }
 
 .inner-wrapper {
@@ -56,6 +58,10 @@ img {
   float: left;
   margin-top: 25px;
   margin-left: 25px;
+  @include bp('baby-bear') {
+    height: auto;
+    width: calc(100% - 50px);
+  }
 }
 
 .main {
@@ -66,8 +72,11 @@ img {
   padding: 35px 35px;
   width: calc(100% - 355px);
   overflow-y: auto;
-  @include bp(baby-bear) {
-    padding: 50px;
+  @include bp('baby-bear') {
+    height: auto;
+    width: calc(100% - 50px);
+    margin-left: 25px;
+    margin-top: 0;
   }
 }
 

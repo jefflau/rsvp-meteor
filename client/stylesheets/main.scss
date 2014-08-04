@@ -5,6 +5,8 @@
 @import 'header';
 @import 'rsvpform';
 @import 'venuedresscode';
+@import 'questions';
+@import 'admin';
 
 //Intro
 
@@ -17,23 +19,4 @@
 
 .meal-selection {
   @include centerer;
-}
-
-//ADMIN
-
-.admin {
-  background: white;
-  padding: 20px;
-}
-
-//Questions
-
-.questions {
- background: white;
- padding: 15px;
-}
-
-.question {
-  background: white;
-  padding: 15px;
 }

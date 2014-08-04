@@ -10,6 +10,8 @@ Template.addCourse.events({
       if(err)
         console.log(err);
     });
+
+    template.find('input').value="";
   }
 });
 
@@ -26,5 +28,8 @@ Template.addMeal.events({
       if(err)
         console.log(err);
     });
+
+
+    $('#'+this._id).find('input').val('');
   }
 });

@@ -19,7 +19,7 @@
 
 <template name="courses">
     {{#each this}}
-      <div class="course">
+      <div class="course" id="{{this._id}}">
         <h3>{{courseName}}</h3>
         <ul>
           {{#each meals}}

@@ -13,6 +13,6 @@
     @media (max-width: 1250px) { @content; }
   }
   @else if $point == baby-bear {
-    @media (max-width: 650px)  { @content; }
+    @media (max-width: 768px)  { @content; }
   }
 }

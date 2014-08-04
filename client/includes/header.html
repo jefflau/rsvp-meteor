@@ -7,14 +7,16 @@
     </div>
     <nav class="main-nav">
       <ul>
-        <li><a href="{{pathFor 'home'}}">Home</a></li>
-        <li><a href="{{pathFor 'venueDressCode'}}">Venue &amp; Dress Code</a></li>
-        <li><a href="{{pathFor 'schedule'}}">Wedding Events Schedule</a></li>
-        <li><a href="{{pathFor 'rsvpForm'}}">RSVP</a></li>
-        <li><a href="{{pathFor 'accommodations'}}">Accommodations</a></li>
-        <li><a href="{{pathFor 'welcomeDinner'}}">Welcome Dinner</a></li>
-        <li><a href="{{pathFor 'informationPhuket'}}">Information on Phuket</a></li>
-        <li><a href="{{pathFor 'questions'}}">Question Board</a></li>
+        <li class="toggle-menu"><a href="#0"><i class="fa fa-bars"></i></a></li>
+        <li><a class="{{activeIfTemplateIs 'home'}}" href="{{pathFor 'home'}}">Home</a></li>
+        <li><a class="{{activeIfTemplateIs 'venueDressCode'}}" href="{{pathFor 'venueDressCode'}}">Venue &amp; Dress Code</a></li>
+        <li><a class="{{activeIfTemplateIs 'schedule'}}" href="{{pathFor 'schedule'}}">Wedding Events Schedule</a></li>
+        <li><a class="{{activeIfTemplateIs 'rsvpForm'}}" href="{{pathFor 'rsvpForm'}}">RSVP</a></li>
+        <li><a class="{{activeIfTemplateIs 'accommodations'}}" href="{{pathFor 'accommodations'}}">Accommodations</a></li>
+        <li><a class="{{activeIfTemplateIs 'welcomeDinner'}}" href="{{pathFor 'welcomeDinner'}}">Welcome Dinner</a></li>
+        <li><a class="{{activeIfTemplateIs 'informationPhuket'}}" href="{{pathFor 'informationPhuket'}}">Information on Phuket</a></li>
+        <li><a class="{{activeIfTemplateIs 'questions'}}" href="{{pathFor 'questions'}}">Question Board</a></li>
+        <li><a class="{{activeIfTemplateIs 'contact'}}" href="{{pathFor 'contact'}}">Contact</a></li>
       </ul>
     </nav>
   </header>
